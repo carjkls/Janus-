@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "janus"
+version = "0.1.0"
+description = "OSINT + intelligent wordlist generator: pulls a public Instagram profile (logic adapted from toutatis) and turns it into a mutation-based wordlist and matching hashcat rule file"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-or-later" }
+dependencies = [
+    "requests>=2.31",
+    "phonenumbers>=8.13",
+    "pycountry>=23.12",
+]
+
+[project.scripts]
+janus = "janus.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["janus*"]
